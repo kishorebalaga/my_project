@@ -1,0 +1,29 @@
+//for robotics use ai detection object classes 
+//robot.names 
+0 person
+1 backpack
+2 wheelchair
+3 fire_smoke
+4 smoking
+5 escooter
+6 bicycle
+7 traffic_notice
+8 kishore_2
+9 kishore_3
+
+
+
+
+
+
+
+
+
+//Dataset
+1.Backpack 2k 
+2.Bicycle 2k
+3.person 10k 
+4.Smoking 2k
+5.Escooter 2k
+6.Fire 2k
+7.wheelchair 2k

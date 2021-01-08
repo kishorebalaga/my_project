@@ -1,0 +1,27 @@
+from pycocotools.coco import COCO
+import requests
+
+coco = COCO('/home/robert/Desktop/annotations_train/instances_train2017.json')
+cats = coco.loadCats(coco.getCatIds())
+nms=[cat['name'] for cat in cats]
+#print('COCO categories: \n{}\n'.format(' '.join(nms)))
+
+catIds = coco.getCatIds(catNms=['bicycle'])
+print(catIds)
+imgIds = coco.getImgIds(catIds=catIds)
+print("imgIds: ", imgIds)
+images = coco.loadImgs(imgIds)
+
+#img_data = requests.get(images[1]['coco_url']).content
+
+#with open('/home/robert/Desktop/test_intern/bicycle_img/'+images[1]['file_name'],'wb') as handler:
+#                       handler.write(img_data)
+
+
+
+
+for imag in images:
+        img_data = requests.get(imag['coco_url']).content
+        with open('/home/robert/Desktop/test_intern/bicycle_img/'+imag['file_name'],'wb') as handler:
+                                  handler.write(img_data)
+                                  print('image downloaded')
